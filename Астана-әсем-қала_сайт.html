@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="kk">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Астана – әсем қала · Қазақ тілі · 6-сынып</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700;800&family=PT+Sans:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg1:#0a2a66;--bg2:#0f4fa8;--sky:#3aa0ff;--gold:#f5c542;--card:rgba(255,255,255,.10);--line:rgba(255,255,255,.22);--ok:#2ecc71;--bad:#ff5c5c;--txt:#fff}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;background:#0a2a66}
+body{margin:0;font-family:'PT Sans',system-ui,sans-serif;color:var(--txt);background:linear-gradient(160deg,#071d4a 0%,var(--bg1) 35%,var(--bg2) 75%,#1c6fd1 100%);min-height:100vh;font-size:17px;line-height:1.5}
+h1,h2,h3,.logo{font-family:'Montserrat',sans-serif}
+a{color:var(--gold)}
+.wrap{max-width:1100px;margin:0 auto;padding:0 18px}
+header{position:sticky;top:0;z-index:50;background:rgba(7,29,74,.85);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+header .wrap{display:flex;align-items:center;gap:12px;padding:10px 18px;flex-wrap:wrap}
+.logo{display:flex;align-items:center;gap:10px;font-weight:800;color:#fff;text-decoration:none}
+.logo small{display:block;font-size:11px;color:var(--gold);letter-spacing:1px}
+nav{display:flex;gap:6px;flex-wrap:wrap;margin-left:auto}
+nav button{background:transparent;border:1px solid var(--line);color:#fff;padding:7px 12px;border-radius:999px;cursor:pointer;font:600 14px 'PT Sans'}
+nav button.on{background:var(--gold);color:#0a2a66;border-color:var(--gold)}
+section{display:none;padding:26px 0 40px;animation:fade .4s}
+section.on{display:block}
+@keyframes fade{from{opacity:0;transform:translateY(8px)}to{opacity:1}}
+.card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:22px;margin-bottom:18px;box-shadow:0 8px 30px rgba(0,0,0,.18)}
+.hero{display:grid;grid-template-columns:1.2fr .8fr;gap:22px;align-items:center}
+.hero h1{font-size:44px;line-height:1.1;margin:8px 0}
+.tag{display:inline-block;background:rgba(245,197,66,.18);color:var(--gold);border:1px solid rgba(245,197,66,.5);padding:4px 12px;border-radius:999px;font-size:13px;font-weight:700}
+.btn{background:var(--gold);color:#0a2a66;border:0;border-radius:12px;padding:10px 18px;font:700 15px 'PT Sans';cursor:pointer;transition:.15s}
+.btn:hover{transform:translateY(-2px);box-shadow:0 6px 16px rgba(0,0,0,.25)}
+.btn.ghost{background:transparent;color:#fff;border:1px solid var(--line)}
+.btn.sm{padding:6px 12px;font-size:13px}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.grid4{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.goal li{margin-bottom:6px}
+.letter{background:#fff8e6;color:#3b2a00;border-radius:14px;padding:18px 20px;font-family:Georgia,serif;font-size:19px;position:relative;box-shadow:0 10px 24px rgba(0,0,0,.3);transform:rotate(-1deg)}
+.letter mark{background:transparent;color:inherit;transition:.3s;border-radius:4px;padding:0 2px}
+.letter.show mark{background:#ffd35a}
+.reveal{display:none;margin-top:14px}
+.reveal.on{display:block;animation:fade .5s}
+.big{font-size:22px;font-weight:800;color:var(--gold)}
+.def{border-left:5px solid var(--gold);padding:12px 16px;background:rgba(255,255,255,.07);border-radius:0 12px 12px 0;font-size:18px}
+.type{background:rgba(255,255,255,.08);border-radius:14px;padding:14px;border:1px solid var(--line)}
+.type h3{margin:0 0 6px;color:var(--gold);font-size:17px}
+table.t{width:100%;border-collapse:collapse;margin-top:8px}
+table.t th,table.t td{border:1px solid var(--line);padding:8px 10px;text-align:left;vertical-align:top}
+table.t th{background:rgba(245,197,66,.15);color:var(--gold)}
+.flip{perspective:800px;height:120px;cursor:pointer}
+.flip .in{position:relative;width:100%;height:100%;transition:transform .6s;transform-style:preserve-3d}
+.flip.on .in{transform:rotateY(180deg)}
+.flip .f,.flip .b{position:absolute;inset:0;backface-visibility:hidden;border-radius:14px;display:flex;align-items:center;justify-content:center;text-align:center;padding:10px;font-weight:700}
+.flip .f{background:linear-gradient(135deg,#1f6fe0,#0b3c8c);border:1px solid var(--line);font-size:20px}
+.flip .b{background:var(--gold);color:#0a2a66;transform:rotateY(180deg);font-size:15px}
+.tasknum{display:inline-flex;width:38px;height:38px;border-radius:50%;background:var(--gold);color:#0a2a66;font-weight:800;align-items:center;justify-content:center;margin-right:10px}
+.task h2{display:flex;align-items:center;margin:0 0 6px;font-size:22px}
+.muted{opacity:.8;font-size:15px}
+.match{display:grid;grid-template-columns:1fr 1fr;gap:10px 30px;margin-top:12px}
+.mi{padding:10px 12px;border-radius:12px;background:rgba(255,255,255,.12);border:2px solid transparent;cursor:pointer;text-align:center;font-weight:700;transition:.2s;user-select:none}
+.mi:hover{background:rgba(255,255,255,.2)}
+.mi.sel{border-color:var(--gold)}
+.mi.done{background:rgba(46,204,113,.3);border-color:var(--ok);cursor:default}
+.mi.err{animation:shake .4s;border-color:var(--bad)}
+@keyframes shake{25%{transform:translateX(-6px)}75%{transform:translateX(6px)}}
+.pool{display:flex;flex-wrap:wrap;gap:8px;margin:12px 0;min-height:44px}
+.chip{background:#fff;color:#0a2a66;padding:7px 14px;border-radius:999px;font-weight:700;cursor:pointer;user-select:none;transition:.15s}
+.chip.sel{background:var(--gold);transform:scale(1.08)}
+.bin{background:rgba(255,255,255,.08);border:2px dashed var(--line);border-radius:14px;padding:10px;min-height:150px;cursor:pointer;transition:.2s}
+.bin:hover{border-color:var(--gold)}
+.bin h4{margin:0 0 8px;text-align:center;color:var(--gold);font-family:Montserrat}
+.bin .chip{display:inline-block;margin:3px;font-size:14px;cursor:default}
+.chip.ok{background:var(--ok);color:#fff}
+.chip.no{background:var(--bad);color:#fff}
+.edtext{background:#fff;color:#1b2a4a;border-radius:14px;padding:18px 20px;font-size:19px;line-height:2.1}
+.w{cursor:pointer;padding:2px 3px;border-radius:5px;transition:.2s}
+.w:hover{background:#e6efff}
+.w.fixed{background:#d5f7e3;color:#0a7a3c;font-weight:700}
+.w.miss{background:#ffe0e0;color:#c0392b}
+.w.hint{outline:2px dashed #f39c12}
+.rule{margin-top:10px;min-height:28px;color:var(--gold);font-weight:700}
+.bar{height:12px;border-radius:99px;background:rgba(255,255,255,.15);overflow:hidden;margin:8px 0}
+.bar i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--gold),#ffe28a);transition:.4s}
+/* jeopardy */
+.teams{display:flex;gap:12px;justify-content:center;margin-bottom:14px;flex-wrap:wrap}
+.team{background:rgba(255,255,255,.1);border:2px solid var(--line);border-radius:14px;padding:10px 18px;text-align:center;min-width:170px;cursor:pointer}
+.team.on{border-color:var(--gold);box-shadow:0 0 0 3px rgba(245,197,66,.25)}
+.team b{display:block;font-size:30px;color:var(--gold);font-family:Montserrat}
+.jeo{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+.jh{background:var(--gold);color:#0a2a66;font:800 15px Montserrat;text-align:center;padding:12px 6px;border-radius:12px}
+.jc{background:linear-gradient(135deg,#1f6fe0,#0b3c8c);border:1px solid var(--line);border-radius:12px;padding:20px 6px;text-align:center;font:800 26px Montserrat;color:var(--gold);cursor:pointer;transition:.2s}
+.jc:hover{transform:scale(1.04)}
+.jc.used{opacity:.25;pointer-events:none}
+.modal{position:fixed;inset:0;background:rgba(3,14,40,.8);display:none;align-items:center;justify-content:center;z-index:100;padding:16px}
+.modal.on{display:flex}
+.mbox{background:linear-gradient(160deg,#0f4fa8,#0a2a66);border:2px solid var(--gold);border-radius:20px;padding:26px;max-width:620px;width:100%;text-align:center;animation:fade .3s}
+.mbox .q{font-size:24px;font-weight:700;margin:14px 0}
+.mbox .ans{display:none;background:var(--gold);color:#0a2a66;border-radius:12px;padding:12px;font-weight:800;font-size:19px;margin:12px 0}
+.timer{font:800 22px Montserrat;color:var(--gold)}
+/* games */
+.gtabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:14px}
+.gtabs button{flex:1;min-width:150px}
+.game{display:none}.game.on{display:block}
+.opts{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:12px}
+.opt{background:rgba(255,255,255,.14);border:2px solid transparent;border-radius:12px;padding:12px;color:#fff;font:700 17px 'PT Sans';cursor:pointer}
+.opt:hover{background:rgba(255,255,255,.22)}
+.opt.ok{background:var(--ok)}.opt.no{background:var(--bad)}
+.huge{font:800 40px Montserrat;color:var(--gold);text-align:center;margin:14px 0}
+.tower{display:flex;justify-content:center}
+.tw-wrap{display:grid;grid-template-columns:200px 1fr;gap:20px;align-items:center}
+.wheelbox{display:flex;flex-direction:column;align-items:center;gap:12px}
+#wheel{transition:transform 4s cubic-bezier(.17,.67,.2,1)}
+.pointer{width:0;height:0;border-left:16px solid transparent;border-right:16px solid transparent;border-top:28px solid var(--gold);margin-bottom:-14px;z-index:2;position:relative}
+.letters{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin:14px 0}
+.letters span{width:46px;height:52px;border-radius:10px;background:#fff;color:#0a2a66;font:800 24px Montserrat;display:flex;align-items:center;justify-content:center;cursor:pointer;transition:.15s;box-shadow:0 4px 0 #9db6e0}
+.letters span.used{opacity:.25;pointer-events:none}
+.answer{display:flex;gap:6px;justify-content:center;min-height:52px;flex-wrap:wrap}
+.answer span{width:42px;height:48px;border-bottom:3px solid var(--gold);font:800 24px Montserrat;display:flex;align-items:center;justify-content:center}
+.refl{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.rf{background:rgba(255,255,255,.1);border:2px solid var(--line);border-radius:16px;padding:18px;text-align:center;cursor:pointer;transition:.2s}
+.rf:hover,.rf.on{border-color:var(--gold);background:rgba(245,197,66,.15)}
+.rf .ic{font-size:44px}
+.cnt{display:inline-block;background:var(--gold);color:#0a2a66;border-radius:99px;padding:2px 10px;font-weight:800;margin-top:6px}
+.toast{position:fixed;bottom:20px;left:50%;transform:translateX(-50%) translateY(100px);background:#fff;color:#0a2a66;padding:12px 20px;border-radius:12px;font-weight:700;transition:.3s;z-index:200;box-shadow:0 8px 24px rgba(0,0,0,.3)}
+.toast.on{transform:translateX(-50%) translateY(0)}
+.ornament{height:14px;background:repeating-linear-gradient(90deg,transparent 0 10px,rgba(245,197,66,.6) 10px 12px,transparent 12px 22px);mask:radial-gradient(circle at 50% 50%,#000 60%,transparent 61%) 0 0/22px 14px;opacity:.8;margin:6px 0 18px}
+footer{text-align:center;padding:24px;border-top:1px solid var(--line);font-size:14px;opacity:.85}
+.confetti{position:fixed;top:-20px;width:10px;height:14px;z-index:300;pointer-events:none;animation:fall linear forwards}
+@keyframes fall{to{transform:translateY(110vh) rotate(720deg)}}
+@media(max-width:800px){nav{flex-wrap:nowrap;overflow-x:auto;width:100%;margin-left:0;padding-bottom:4px}nav button{white-space:nowrap}.hero,.grid2,.tw-wrap{grid-template-columns:1fr}.grid4,.jeo{grid-template-columns:repeat(2,1fr)}.grid3,.refl{grid-template-columns:1fr}.hero h1{font-size:32px}.match{gap:8px 12px}.opts{grid-template-columns:1fr}.jc{font-size:20px;padding:14px 4px}.jh{font-size:12px}}
+</style>
+</head>
+<body>
+<header><div class="wrap">
+  <a class="logo" href="#" onclick="go('home');return false">
+    <svg width="40" height="40" viewBox="0 0 64 64"><circle cx="32" cy="32" r="30" fill="#0f4fa8" stroke="#f5c542" stroke-width="3"/><circle cx="32" cy="21" r="8" fill="#f5c542"/><path d="M32 29v22M24 51h16M32 33l-8-8M32 33l8-8M32 29l-10-4M32 29l10-4" stroke="#f5c542" stroke-width="2.5" stroke-linecap="round" fill="none"/></svg>
+    <span>Астана – әсем қала<small>ҚАЗАҚ ТІЛІ · 6-СЫНЫП</small></span>
+  </a>
+  <nav id="nav">
+    <button data-s="home" class="on">🏠 Басты</button>
+    <button data-s="theory">📘 Теория</button>
+    <button data-s="tasks">✍️ 3 тапсырма</button>
+    <button data-s="jeo">🧠 Ойын алаңы</button>
+    <button data-s="games">🎮 Ойындар</button>
+    <button data-s="refl">⭐ Рефлексия</button>
+  </nav>
+</div></header>
+
+<main class="wrap">
+<!-- HOME -->
+<section id="home" class="on">
+  <div class="hero">
+    <div>
+      <span class="tag">Тілдік бағдар: диалект сөздер</span>
+      <h1>Астана –<br><span style="color:var(--gold)">әсем қала</span></h1>
+      <p class="muted">Ұлттық құндылық: отансүйгіштік, елордаға құрмет, ана тілінің тазалығы</p>
+      <div class="card goal" style="margin-top:14px">
+        <b style="color:var(--gold)">🎯 Оқу мақсаттары</b>
+        <ul style="margin:8px 0 0;padding-left:20px">
+          <li><b>6.3.6.1</b> мәтіндегі орфографиялық және пунктуациялық қателерді сөздіктерге, емле ережелеріне сүйеніп, түзету, редакциялау</li>
+          <li><b>6.4.3.1</b> неологизм, термин, диалект сөз, кәсіби сөздердің қолданыс аясын түсіну және ажырата білу</li>
+        </ul>
+      </div>
+    </div>
+    <div>
+      <svg viewBox="0 0 300 300" width="100%" style="max-width:340px;display:block;margin:auto">
+        <defs><radialGradient id="gb" cx="40%" cy="35%"><stop offset="0" stop-color="#fff3c4"/><stop offset=".5" stop-color="#f5c542"/><stop offset="1" stop-color="#c78a00"/></radialGradient></defs>
+        <circle cx="150" cy="150" r="140" fill="rgba(255,255,255,.06)"/>
+        <rect x="40" y="200" width="30" height="70" fill="#1c6fd1" opacity=".6"/><rect x="230" y="180" width="34" height="90" fill="#1c6fd1" opacity=".6"/>
+        <path d="M200 270 L236 150 L272 270Z" fill="#3aa0ff" opacity=".45"/>
+        <path d="M30 270 Q60 170 92 270Z" fill="#3aa0ff" opacity=".45"/>
+        <path d="M146 270 L146 120 L154 120 L154 270Z" fill="#e8eef9"/>
+        <path d="M150 140 L112 92 M150 140 L188 92 M150 132 L120 80 M150 132 L180 80 M150 128 L135 78 M150 128 L165 78" stroke="#e8eef9" stroke-width="5" stroke-linecap="round"/>
+        <circle cx="150" cy="72" r="34" fill="url(#gb)"><animate attributeName="r" values="34;36;34" dur="3s" repeatCount="indefinite"/></circle>
+        <rect x="120" y="266" width="60" height="8" rx="3" fill="#e8eef9"/>
+        <path d="M0 285 Q75 275 150 285 T300 285 V300 H0Z" fill="#3aa0ff" opacity=".7"/>
+      </svg>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2 style="margin-top:0">✉️ WOW-сәт: «Әжемнің хаты»</h2>
+    <p class="muted">Ауылдағы әже Астанадағы немересіне хат жазыпты. Оқып көр: қай сөздер саған бейтаныс?</p>
+    <div class="letter" id="letter">
+      Қымбатты немерем! Астанаңа барсам, сенің <mark>бауыңды</mark> көремін. Саған <mark>бәрәңгі</mark> мен <mark>бәдірен</mark> ала барамын. <mark>Тәтең</mark> маған: «Үлкен <mark>бедре</mark> ала кел», – деді. Есіл жағасындағы <mark>талдардың</mark> көлеңкесінде <mark>шыныдан</mark> шай ішеміз ғой!<br><span style="float:right">Әжең</span><div style="clear:both"></div>
+    </div>
+    <div style="margin-top:16px;display:flex;gap:10px;flex-wrap:wrap">
+      <button class="btn" onclick="letterShow()">🔍 Бейтаныс сөздерді көрсет</button>
+      <button class="btn ghost" onclick="document.getElementById('topicReveal').classList.add('on');confetti()">🎁 Тақырыпты аш</button>
+    </div>
+    <div class="reveal" id="topicReveal">
+      <div class="def">Сарымен белгіленген сөздер – <b>диалект сөздер</b>. Оларды тек белгілі бір өңірдің тұрғындары түсінеді. Бүгін біз оларды <b>әдеби тілден</b> ажыратамыз және Астана туралы мәтінді <b>қатесіз редакциялаймыз</b>!</div>
+    </div>
+  </div>
+
+  <div class="card">
+    <b style="color:var(--gold)">🚀 Мақсат → Нәтиже</b>
+    <div class="grid3" style="margin-top:10px">
+      <div class="type"><h3>Барлығы</h3>диалект сөзді тауып, әдеби баламасын атайды</div>
+      <div class="type"><h3>Көпшілігі</h3>4 сөз тобын ажыратып, мәтіндегі қатені ережеге сүйеніп түзетеді</div>
+      <div class="type"><h3>Кейбірі</h3>диалектінің ресми стильде қолданылмау себебін түсіндіріп, өз мәтінін құрайды</div>
+    </div>
+  </div>
+</section>
+
+<!-- THEORY -->
+<section id="theory">
+  <div class="card">
+    <h2 style="margin-top:0">📘 Диалект сөздер дегеніміз не?</h2>
+    <div class="def"><b>Диалект сөздер</b> – қазақ тілінде сөйлейтін белгілі бір өңір (аймақ) тұрғындарының ғана сөйлеуінде қолданылатын, жалпыхалықтық <b>әдеби тілде</b> қолданылмайтын сөздер.</div>
+    <p>Диалект сөздер – тіліміздің байлығы, халықтың тарихы мен тұрмысының куәсі. Бірақ <b>ресми іс-қағаздарда, ғылыми мәтінде, жаңалық хабарында</b> олардың орнына әдеби сөз қолданылады. Жазушылар диалект сөзді <b>көркем шығармада</b> кейіпкердің тілін, жергілікті бояуды көрсету үшін пайдаланады. Диалект сөздердің мағынасын <b>«Қазақ тілінің аймақтық сөздігінен»</b> табуға болады.</p>
+    <div class="grid3">
+      <div class="type"><h3>Лексикалық</h3>Зат басқа сөзбен аталады: <b>бәрәңгі</b> (картоп), <b>бәдірен</b> (қияр), <b>бедре</b> (шелек)</div>
+      <div class="type"><h3>Фонетикалық</h3>Сөз басқаша дыбысталады: кейбір өңірлерде <b>ш</b> орнына <b>ч</b> айтылады: <b>шай → чай</b></div>
+      <div class="type"><h3>Грамматикалық</h3>Қосымшалар өзгеше жалғанады: әдеби <b>«баратын»</b> орнына кейбір өңірлерде <b>«баратұғын»</b> айтылады</div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2 style="margin-top:0">🔄 Карточканы бас: әдеби баламасы қандай?</h2>
+    <div class="grid4" id="flips"></div>
+  </div>
+
+  <div class="card">
+    <h2 style="margin-top:0">🧩 Сөздің 4 тобын салыстыр</h2>
+    <table class="t">
+      <tr><th>Сөз тобы</th><th>Анықтамасы</th><th>Қолданыс аясы</th><th>Мысал</th></tr>
+      <tr><td><b>Неологизм</b></td><td>Жаңадан пайда болған сөздер</td><td>Жаңа ұғым, жаңа зат пайда болғанда; БАҚ, күнделікті өмір</td><td>ғаламтор, бағдаршам, әуежай</td></tr>
+      <tr><td><b>Термин</b></td><td>Ғылым, техника, өнер саласындағы ұғымның атауы</td><td>Ғылыми мәтін, оқулық</td><td>бастауыш, периметр, молекула</td></tr>
+      <tr><td><b>Кәсіби сөз</b></td><td>Белгілі бір кәсіп иелері қолданатын сөздер</td><td>Сол кәсіп иелерінің ортасы</td><td>көрік, төс (ұста); жылым, қармақ (балықшы)</td></tr>
+      <tr><td><b>Диалект сөз</b></td><td>Белгілі бір өңірде ғана қолданылатын сөздер</td><td>Жергілікті сөйлеу, көркем әдебиеттегі кейіпкер тілі</td><td>бәрәңгі, бау, тәте</td></tr>
+    </table>
+    <p class="muted" style="margin-top:12px">💡 Есте сақта: <b>термин</b> – барлық маманға ортақ ғылыми атау, <b>кәсіби сөз</b> – бір кәсіптің ауызекі тілі, <b>диалект</b> – бір жердің тілі.</p>
+  </div>
+
+  <div class="card">
+    <h2 style="margin-top:0">✏️ Редакциялауға қажет емле ережелері</h2>
+    <table class="t">
+      <tr><th>Ереже</th><th>Мысал</th></tr>
+      <tr><td>Жер-су, қала, өзен атаулары бас әріппен жазылады</td><td>Астана, Есіл, Ақмола</td></tr>
+      <tr><td>Ай атаулары кіші әріппен жазылады</td><td>6 шілде, 6 мамыр</td></tr>
+      <tr><td>Ғимарат, монумент атаулары тырнақшаға алынады</td><td>«Бәйтерек», «Хан Шатыр»</td></tr>
+      <tr><td>«Сайын», «бойы» шылаулары бөлек жазылады</td><td>жыл сайын, күн бойы</td></tr>
+      <tr><td>Бастауыш пен баяндауыш зат есімнен болса, сызықша қойылады</td><td>Астана – елорда.</td></tr>
+      <tr><td>«Ал, бірақ, алайда» алдынан үтір қойылады</td><td>Көшірілді, ал кейін…</td></tr>
+    </table>
+  </div>
+</section>
+
+<!-- TASKS -->
+<section id="tasks">
+  <div class="card task">
+    <h2><span class="tasknum">1</span>«Сәйкестендір» – әженің сөзін «аудар»</h2>
+    <p class="muted">Сол жақтан диалект сөзді, оң жақтан оның әдеби баламасын бас. (Жұптық жұмыс)</p>
+    <div class="bar"><i id="mBar"></i></div>
+    <div class="match" id="match"></div>
+    <div class="reveal" id="mDone">
+      <div class="def" style="margin-top:14px">🎉 Енді сөйлемді әдеби тілде қайта жаз:<br><i>«Балам, бауымыздағы талдың түбіне бәдірен ектім. Бедреге су алып келші», – деді әжем.</i>
+      <br><button class="btn sm" style="margin-top:8px" onclick="this.nextElementSibling.style.display='block'">Тексеру</button><div style="display:none;margin-top:8px;color:var(--gold)"><b>«Балам, бақшамыздағы ағаштың түбіне қияр ектім. Шелекке су алып келші», – деді әжем.</b></div></div>
+    </div>
+    <div style="margin-top:12px"><button class="btn ghost sm" onclick="buildMatch()">↺ Қайта бастау</button></div>
+  </div>
+
+  <div class="card task">
+    <h2><span class="tasknum">2</span>«Сөз себеті» – сөздерді топтастыр</h2>
+    <p class="muted">Сөзді бас, содан кейін керекті себетті бас. (Топтық жұмыс)</p>
+    <div class="pool" id="pool"></div>
+    <div class="grid4" id="bins"></div>
+    <div style="margin-top:12px;display:flex;gap:10px;flex-wrap:wrap"><button class="btn" onclick="checkBins()">✅ Тексеру</button><button class="btn ghost sm" onclick="buildBins()">↺ Қайта бастау</button><span id="binRes" class="big"></span></div>
+  </div>
+
+  <div class="card task">
+    <h2><span class="tasknum">3</span>«Редактор» – мәтіндегі 12 қатені тап</h2>
+    <p class="muted">Мәтінде бас әріп, бірге/бөлек жазу, қос әріп және тыныс белгі қателері бар. Қате сөзді бас – дұрыс болса, ол түзетіледі және ережесі шығады. Орфографиялық сөздікке сүйен!</p>
+    <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px"><span>Табылды: <b id="edCnt" class="big">0</b> / 12 · Қате басу: <b id="edMiss">0</b></span><span class="timer" id="edTimer">08:00</span></div>
+    <div class="bar"><i id="edBar"></i></div>
+    <div class="edtext" id="edtext"></div>
+    <div class="rule" id="rule">👆 Қате деп ойлаған сөзді бас</div>
+    <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:8px">
+      <button class="btn" onclick="edStart()">⏱ Таймерді қос</button>
+      <button class="btn ghost sm" onclick="edHint()">💡 Көмек (ЕББҚ)</button>
+      <button class="btn ghost sm" onclick="edAll()">👁 Барлық жауап</button>
+      <button class="btn ghost sm" onclick="buildEd()">↺ Қайта</button>
+    </div>
+  </div>
+
+  <div class="card">
+    <h3 style="margin-top:0;color:var(--gold)">📋 Дескрипторлар (барлығы 10 балл)</h3>
+    <table class="t">
+      <tr><th>Тапсырма</th><th>Дескриптор</th><th>Балл</th></tr>
+      <tr><td rowspan="2">1</td><td>диалект сөзді әдеби баламасымен сәйкестендіреді</td><td>2</td></tr>
+      <tr><td>сөйлемді әдеби тілде қайта жазады</td><td>1</td></tr>
+      <tr><td rowspan="2">2</td><td>сөздерді 4 топқа дұрыс сұрыптайды</td><td>2</td></tr>
+      <tr><td>бір сөзбен сөйлем құрайды</td><td>1</td></tr>
+      <tr><td rowspan="3">3</td><td>орфографиялық қатені түзетеді</td><td>2</td></tr>
+      <tr><td>пунктуациялық қатені түзетеді</td><td>1</td></tr>
+      <tr><td>түзетудің ережесін атайды</td><td>1</td></tr>
+    </table>
+  </div>
+</section>
+
+<!-- JEOPARDY -->
+<section id="jeo">
+  <div class="card">
+    <h2 style="margin-top:0;text-align:center">🧠 Зияткерлік ойын алаңы «Елорда білгірі»</h2>
+    <p class="muted" style="text-align:center">Команданы таңда → ұпайды таңда → жауап бер. Жауап дұрыс болса, мұғалім «✓ Дұрыс» батырмасын басады.</p>
+    <div class="teams">
+      <div class="team on" data-t="0" onclick="setTeam(0)"><span contenteditable="true">🔵 Бәйтерек</span><b id="sc0">0</b></div>
+      <div class="team" data-t="1" onclick="setTeam(1)"><span contenteditable="true">🟡 Хан Шатыр</span><b id="sc1">0</b></div>
+    </div>
+    <div class="jeo" id="jeoGrid"></div>
+    <div style="text-align:center;margin-top:14px"><button class="btn ghost sm" onclick="buildJeo()">↺ Ойынды қайта бастау</button></div>
+  </div>
+</section>
+
+<!-- GAMES -->
+<section id="games">
+  <div class="gtabs">
+    <button class="btn" data-g="g1">⚡ Жылдам аудармашы</button>
+    <button class="btn ghost" data-g="g2">🏙 Бәйтерекке өрле</button>
+    <button class="btn ghost" data-g="g3">🎡 Сәттілік дөңгелегі</button>
+    <button class="btn ghost" data-g="g4">🔤 Сөз құрастыр</button>
+  </div>
+
+  <div class="card game on" id="g1">
+    <h2 style="margin-top:0">⚡ Жылдам аудармашы</h2>
+    <p class="muted">60 секундта диалект сөздің әдеби баламасын неғұрлым көп тап!</p>
+    <div style="display:flex;justify-content:space-between"><span>Ұпай: <b class="big" id="fScore">0</b></span><span class="timer" id="fTime">60</span></div>
+    <div class="huge" id="fWord">Дайынсың ба?</div>
+    <div class="opts" id="fOpts"></div>
+    <div style="text-align:center;margin-top:14px"><button class="btn" onclick="fStart()">▶ Бастау</button></div>
+  </div>
+
+  <div class="card game" id="g2">
+    <h2 style="margin-top:0">🏙 Бәйтерекке өрле</h2>
+    <p class="muted">Әр дұрыс жауап алтын шарды бір қабат жоғары көтереді. 8 сұрақ – шыңға жет!</p>
+    <div class="tw-wrap">
+      <svg viewBox="0 0 120 300" width="160" style="margin:auto;display:block">
+        <rect x="56" y="40" width="8" height="250" fill="#e8eef9"/>
+        <g id="levels"></g>
+        <circle id="ball" cx="60" cy="275" r="16" fill="#f5c542" style="transition:cy .6s"/>
+        <rect x="35" y="285" width="50" height="8" rx="3" fill="#e8eef9"/>
+      </svg>
+      <div>
+        <div class="muted" id="qNum"></div>
+        <div style="font-size:21px;font-weight:700;margin:8px 0" id="qText"></div>
+        <div class="opts" id="qOpts"></div>
+        <div style="margin-top:12px"><button class="btn ghost sm" onclick="qStart()">↺ Қайта</button></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card game" id="g3">
+    <h2 style="margin-top:0">🎡 Сәттілік дөңгелегі</h2>
+    <p class="muted">Дөңгелекті айналдыр – шыққан сұраққа жауап бер!</p>
+    <div class="wheelbox">
+      <div class="pointer"></div>
+      <svg id="wheel" viewBox="-150 -150 300 300" width="300" height="300"></svg>
+      <button class="btn" onclick="spin()">🎡 Айналдыр</button>
+      <div class="def" id="wq" style="min-height:50px;width:100%;text-align:center">Сұрақ осында шығады</div>
+    </div>
+  </div>
+
+  <div class="card game" id="g4">
+    <h2 style="margin-top:0">🔤 Сөз құрастыр</h2>
+    <p class="muted">Шашылған әріптерден тақырыпқа қатысты сөзді құра.</p>
+    <div style="text-align:center">Кеңес: <b id="aHint" style="color:var(--gold)"></b> · <span id="aNum"></span></div>
+    <div class="answer" id="aAns"></div>
+    <div class="letters" id="aLet"></div>
+    <div style="text-align:center;display:flex;gap:10px;justify-content:center;flex-wrap:wrap"><button class="btn ghost sm" onclick="aReset()">⌫ Тазалау</button><button class="btn sm" onclick="aNext()">Келесі →</button></div>
+  </div>
+</section>
+
+<!-- REFLECTION -->
+<section id="refl">
+  <div class="card">
+    <h2 style="margin-top:0;text-align:center">⭐ Рефлексия «Бәйтерек»</h2>
+    <p class="muted" style="text-align:center">Бүгінгі сабақтан кейін сен Бәйтеректің қай бөлігісің?</p>
+    <div class="refl">
+      <div class="rf" onclick="vote(0,this)"><div class="ic">🌱</div><h3>Тамыр</h3>Әлі де түсінбейтін тұстарым бар<br><span class="cnt" id="v0">0</span></div>
+      <div class="rf" onclick="vote(1,this)"><div class="ic">🌳</div><h3>Діңгек</h3>Түсіндім, бірақ кейде көмек керек<br><span class="cnt" id="v1">0</span></div>
+      <div class="rf" onclick="vote(2,this)"><div class="ic">🌟</div><h3>Алтын шар</h3>Толық түсіндім, басқаға түсіндіре аламын<br><span class="cnt" id="v2">0</span></div>
+    </div>
+  </div>
+  <div class="card">
+    <h3 style="margin-top:0;color:var(--gold)">🎯 Мақсатқа оралу</h3>
+    <div class="grid3">
+      <div class="flip" onclick="this.classList.toggle('on')"><div class="in"><div class="f">Диалект сөз дегеніміз не?</div><div class="b">Белгілі бір өңірде ғана қолданылатын, әдеби тілде жоқ сөз</div></div></div>
+      <div class="flip" onclick="this.classList.toggle('on')"><div class="in"><div class="f">Диалектіні қай жерде қолданбаймыз?</div><div class="b">Ресми іс-қағаз, ғылыми мәтін, жаңалық хабары</div></div></div>
+      <div class="flip" onclick="this.classList.toggle('on')"><div class="in"><div class="f">Термин мен кәсіби сөздің айырмасы?</div><div class="b">Термин – ғылымның ресми атауы; кәсіби сөз – бір кәсіп иелерінің сөзі</div></div></div>
+    </div>
+  </div>
+  <div class="card">
+    <h3 style="margin-top:0;color:var(--gold)">🏠 Үй тапсырмасы</h3>
+    <p>«Менің Астанам» тақырыбында 7–8 сөйлемнен тұратын мәтін жаз: кемінде <b>1 неологизм</b>, <b>1 термин</b> қолдан. Ауылдағы туысыңның тілінен <b>бір диалект сөз</b> тауып, әдеби баламасын жақшаға жаз. Мәтінді орфографиялық сөздік бойынша тексер.</p>
+    <p class="muted"><b>ЕББҚ:</b> Астананың бір көрікті жері туралы 3–4 сөйлем жаз, 2 диалект сөздің әдеби баламасын жаз.</p>
+  </div>
+</section>
+</main>
+
+<footer>
+  Сайт авторы: <b>Оспанова Ақбота Ахметжанқызы</b><br>«Қазақ тілі» · 6-сынып · «Астана – әсем қала» · 2026–2027 оқу жылы
+</footer>
+
+<div class="modal" id="modal"><div class="mbox">
+  <div class="tag" id="mCat"></div>
+  <div class="q" id="mQ"></div>
+  <div class="timer" id="mT">30</div>
+  <div class="ans" id="mA"></div>
+  <div style="display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin-top:10px">
+    <button class="btn ghost sm" onclick="showAns()">👁 Жауап</button>
+    <button class="btn sm" onclick="jeoRes(true)">✓ Дұрыс</button>
+    <button class="btn ghost sm" onclick="jeoRes(false)">✗ Қате</button>
+  </div>
+</div></div>
+<div class="toast" id="toast"></div>
+
+<script>
+const D = {"pairs": [["бәрәңгі", "картоп"], ["бәдірен", "қияр"], ["бедре", "шелек"], ["шыны", "кесе"], ["бау", "бақша"], ["тал", "ағаш"], ["пешбент", "алжапқыш"], ["тәте", "апай"]], "bins": {"Неологизм": ["ғаламтор", "бағдаршам", "әуежай", "смартфон"], "Термин": ["бастауыш", "синоним", "периметр", "молекула"], "Кәсіби сөз": ["көрік", "төс", "жылым", "қармақ"], "Диалект сөз": ["бәрәңгі", "бәдірен", "бедре", "тәте"]}, "text": [{"w": "астана", "ok": "Астана", "r": "Сөйлем басы және жер-су атауы бас әріппен жазылады."}, {"w": "Қазақстан", "ok": "– Қазақстан", "r": "Бастауыш пен баяндауыш зат есімнен болса, арасына сызықша қойылады."}, "Республикасының", "елордасы.", "Ол", {"w": "есіл", "ok": "Есіл", "r": "Өзен атауы бас әріппен жазылады."}, "өзенінің", "жағасында", "орналасқан.", "1997", "жылы", "елорда", "Алматыдан", {"w": "ақмолаға", "ok": "Ақмолаға", "r": "Қала атауы бас әріппен жазылады."}, {"w": "көшірілді", "ok": "көшірілді,", "r": "«Ал» жалғаулығының алдына үтір қойылады."}, "ал", "1998", "жылдың", "6", "мамырында", "қалаға", "«Астана»", "деген", "атау", "берілді.", "Қаланың", "басты", "нышаны", "–", {"w": "Бәйтерек", "ok": "«Бәйтерек»", "r": "Монумент, ғимарат атаулары тырнақшаға алынады."}, "монументі.", "Оның", {"w": "биктігі", "ok": "биіктігі", "r": "«Биік» түбірінің жазылуы сақталады (орфографиялық сөздікті қара)."}, "97", "метр.", "Бұл", "сан", "елорданың", "көшірілген", "жылын", "еске", "салады.", "Сол", "жағалауда", "Ақорда,", "«Хан", "Шатыр»,", {"w": "бейбітшілік", "ok": "Бейбітшілік", "r": "Ғимараттың ресми атауының бірінші сөзі бас әріппен жазылады."}, "және", "келісім", "сарайы,", "«Нұр", "Әлем»", "павильоны", {"w": "бойкөтерген.", "ok": "бой көтерген.", "r": "Тұрақты тіркестің сыңарлары бөлек жазылады."}, {"w": "Жылсайын", "ok": "Жыл сайын", "r": "«Сайын» шылауы бөлек жазылады."}, "6", {"w": "Шілдеде", "ok": "шілдеде", "r": "Ай атаулары кіші әріппен жазылады."}, "Астана", "күні", "тойланады.", "Астана", "–", "жастардың,", "ғылым", "мен", {"w": "мәдениетің,", "ok": "мәдениеттің,", "r": "Түбір «мәдениет» + -тің жалғауы: екі т жазылады."}, "бейбітшілік", "пен", "келісімнің", "қаласы."], "jeo": [{"cat": "Астана", "q": [{"p": 100, "q": "Астана қай өзеннің жағасында орналасқан?", "a": "Есіл өзені"}, {"p": 200, "q": "Астана күні жыл сайын қай күні тойланады?", "a": "6 шілде"}, {"p": 300, "q": "«Бәйтерек» монументінің биіктігі неше метр? Бұл сан нені еске салады?", "a": "97 метр – елорданың 1997 жылы көшірілуін"}, {"p": 400, "q": "2017 жылы Астанада өткен халықаралық көрме қалай аталды? Оның шар тәрізді басты павильоны?", "a": "EXPO-2017, «Нұр Әлем» павильоны"}]}, {"cat": "Емле", "q": [{"p": 100, "q": "Ай атаулары қай әріппен жазылады? Мысал келтір.", "a": "Кіші әріппен: шілде, мамыр"}, {"p": 200, "q": "«Жыл сайын» – бірге ме, бөлек пе? Неге?", "a": "Бөлек, «сайын» – шылау"}, {"p": 300, "q": "Дұрысын тап: мәдениетің / мәдениеттің", "a": "мәдениеттің (мәдениет + -тің)"}, {"p": 400, "q": "«Әуежай» неге бірге жазылады?", "a": "Біріккен сөз: екі түбір (әуе + жай) бір ұғымды білдіреді"}]}, {"cat": "Тыныс белгі", "q": [{"p": 100, "q": "Монумент, ғимарат, кітап атаулары қандай тыныс белгіге алынады?", "a": "Тырнақшаға: «Бәйтерек», «Хан Шатыр»"}, {"p": 200, "q": "«Астана Қазақстанның елордасы» сөйлеміне қандай тыныс белгі жетіспейді?", "a": "Сызықша: Астана – Қазақстанның елордасы"}, {"p": 300, "q": "«Ал, бірақ, алайда» жалғаулықтарының алдына қандай белгі қойылады?", "a": "Үтір"}, {"p": 400, "q": "Төл сөз автор сөзінен бұрын келсе, қандай белгілер қойылады? Үлгі айт.", "a": "«Астана – әсем қала», – деді әжем. (тырнақша, үтір, сызықша)"}]}, {"cat": "Сөз байлығы", "q": [{"p": 100, "q": "Диалект сөз дегеніміз не?", "a": "Белгілі бір өңірде ғана қолданылатын, әдеби тілде жоқ сөз"}, {"p": 200, "q": "«Бәрәңгі» сөзінің әдеби баламасы қандай?", "a": "Картоп"}, {"p": 300, "q": "«Ғаламтор», «бағдаршам» – қандай сөздер?", "a": "Неологизмдер (жаңа сөздер)"}, {"p": 400, "q": "Неге ресми хатта, ғылыми мәтінде диалект сөз қолданылмайды?", "a": "Ресми, ғылыми стиль әдеби тіл нормасын талап етеді; мәтін барлық оқырманға түсінікті болуы керек"}]}], "quiz": [{"q": "Белгілі бір өңірде ғана қолданылатын сөздер қалай аталады?", "o": ["Термин", "Диалект сөз", "Неологизм", "Кәсіби сөз"], "a": 1}, {"q": "«Бәдірен» сөзінің әдеби баламасы:", "o": ["қызанақ", "алма", "қияр", "сәбіз"], "a": 2}, {"q": "Неологизмді тап:", "o": ["ғаламтор", "бедре", "төс", "бастауыш"], "a": 0}, {"q": "Ұста қолданатын кәсіби сөз:", "o": ["молекула", "көрік", "бау", "смартфон"], "a": 1}, {"q": "Дұрыс жазылған нұсқа:", "o": ["6 Шілдеде", "6 шілдеде", "6-шілдеде", "алты Шілдеде"], "a": 1}, {"q": "Дұрыс жазылған нұсқа:", "o": ["Жылсайын", "Жыл-сайын", "Жыл сайын", "Жылы сайын"], "a": 2}, {"q": "«Астана Қазақстанның елордасы» сөйлемінде бастауыш пен баяндауыш арасына:", "o": ["үтір", "сызықша", "қос нүкте", "ештеңе"], "a": 1}, {"q": "Диалект сөздер қай жерде орынды қолданылады?", "o": ["Ресми өтініште", "Ғылыми мақалада", "Көркем шығармада кейіпкер тілінде", "Жаңалық хабарында"], "a": 2}], "anag": [["ЕЛОРДА", "Мемлекеттің бас қаласы"], ["БӘЙТЕРЕК", "Астананың басты нышаны"], ["ДИАЛЕКТ", "Жергілікті сөз"], ["ЕСІЛ", "Астана жағасындағы өзен"], ["ТЕРМИН", "Ғылым саласының сөзі"], ["АҚОРДА", "Президент резиденциясы"], ["НЕОЛОГИЗМ", "Жаңа сөз"], ["ЕМЛЕ", "Жазу ережесі"]], "wheel": ["«Тал» сөзінің әдеби баламасын айт.", "Бір неологизм ойлап, сөйлем құра.", "Астананың 2 көрікті жерін ата.", "«Бедре» сөзі нені білдіреді?", "Ай атаулары қалай жазылады?", "Бір кәсіби сөз айтып, ол қай мамандыққа тән екенін түсіндір.", "«Әжем бауда жүр» сөйлемін әдеби тілге аудар.", "Термин мен кәсіби сөздің айырмасы неде?"]};
+const $ = s => document.querySelector(s), $$ = s => [...document.querySelectorAll(s)];
+const shuf = a => { a = [...a]; for (let i = a.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); [a[i], a[j]] = [a[j], a[i]]; } return a; };
+function toast(t){ const e=$('#toast'); e.textContent=t; e.classList.add('on'); clearTimeout(e._t); e._t=setTimeout(()=>e.classList.remove('on'),1800); }
+function confetti(){ const c=['#f5c542','#fff','#3aa0ff','#2ecc71']; for(let i=0;i<60;i++){ const d=document.createElement('div'); d.className='confetti'; d.style.left=Math.random()*100+'vw'; d.style.background=c[i%4]; d.style.animationDuration=(1.5+Math.random()*2)+'s'; document.body.appendChild(d); setTimeout(()=>d.remove(),4000);} }
+function go(id){ $$('section').forEach(s=>s.classList.toggle('on',s.id===id)); $$('#nav button').forEach(b=>b.classList.toggle('on',b.dataset.s===id)); window.scrollTo({top:0}); }
+$$('#nav button').forEach(b=>b.onclick=()=>go(b.dataset.s));
+function letterShow(){ $('#letter').classList.add('show'); toast('7 диалект сөз табылды!'); }
+
+/* flips */
+$('#flips').innerHTML = D.pairs.map(p=>`<div class="flip" onclick="this.classList.toggle('on')"><div class="in"><div class="f">${p[0]}</div><div class="b">${p[1]}</div></div></div>`).join('');
+
+/* task 1 match */
+let mSel=null, mDone=0;
+function buildMatch(){
+  mSel=null; mDone=0; $('#mBar').style.width='0'; $('#mDone').classList.remove('on');
+  const L=shuf(D.pairs.map((p,i)=>({t:p[0],i}))), R=shuf(D.pairs.map((p,i)=>({t:p[1],i})));
+  $('#match').innerHTML = L.map((l,k)=>`<div class="mi" data-side="L" data-i="${l.i}">${l.t}</div><div class="mi" data-side="R" data-i="${R[k].i}">${R[k].t}</div>`).join('');
+  $$('#match .mi').forEach(e=>e.onclick=()=>{
+    if(e.classList.contains('done')) return;
+    if(!mSel || mSel.dataset.side===e.dataset.side){ $$('#match .mi.sel').forEach(x=>x.classList.remove('sel')); e.classList.add('sel'); mSel=e; return; }
+    if(mSel.dataset.i===e.dataset.i){ mSel.classList.remove('sel'); mSel.classList.add('done'); e.classList.add('done'); mDone++; $('#mBar').style.width=(mDone/D.pairs.length*100)+'%'; toast('Дұрыс! ✔');
+      if(mDone===D.pairs.length){ $('#mDone').classList.add('on'); confetti(); } }
+    else { [mSel,e].forEach(x=>{x.classList.add('err'); setTimeout(()=>x.classList.remove('err'),400);}); mSel.classList.remove('sel'); }
+    mSel=null;
+  });
+}
+
+/* task 2 bins */
+let bSel=null;
+function buildBins(){
+  bSel=null; $('#binRes').textContent='';
+  const words=shuf(Object.entries(D.bins).flatMap(([k,v])=>v.map(w=>({w,k}))));
+  $('#pool').innerHTML = words.map(o=>`<span class="chip" data-k="${o.k}">${o.w}</span>`).join('');
+  $('#bins').innerHTML = Object.keys(D.bins).map(k=>`<div class="bin" data-k="${k}"><h4>${k}</h4></div>`).join('');
+  $$('#pool .chip').forEach(c=>c.onclick=()=>{ if(c.parentElement.id!=='pool') return; $$('.chip.sel').forEach(x=>x.classList.remove('sel')); c.classList.add('sel'); bSel=c; });
+  $$('#bins .bin').forEach(b=>b.onclick=e=>{
+    if(!bSel && e.target.classList.contains('chip') && e.target.parentElement===b){ $('#pool').appendChild(e.target); e.target.className='chip'; return; }
+    if(!bSel) { toast('Алдымен сөзді таңда'); return; }
+    bSel.classList.remove('sel'); b.appendChild(bSel); bSel=null;
+  });
+}
+function checkBins(){
+  let ok=0, all=0;
+  $$('#bins .bin').forEach(b=>b.querySelectorAll('.chip').forEach(c=>{ all++; const g=c.dataset.k===b.dataset.k; c.classList.toggle('ok',g); c.classList.toggle('no',!g); if(g) ok++; }));
+  const total=Object.values(D.bins).flat().length;
+  $('#binRes').textContent=`${ok} / ${total}`;
+  if(ok===total){ confetti(); toast('Керемет! Барлығы дұрыс!'); } else if(all<total) toast('Барлық сөзді себетке сал'); else toast('Қызыл сөздерді қайта ойлан');
+}
+
+/* task 3 editor */
+let edFound=0, edMissN=0, edT=null;
+function buildEd(){
+  edFound=0; edMissN=0; $('#edCnt').textContent=0; $('#edMiss').textContent=0; $('#edBar').style.width='0'; $('#rule').textContent='👆 Қате деп ойлаған сөзді бас';
+  clearInterval(edT); $('#edTimer').textContent='08:00';
+  $('#edtext').innerHTML = D.text.map((t,i)=> typeof t==='string' ? `<span class="w" data-i="${i}">${t}</span>` : `<span class="w" data-i="${i}" data-err="1">${t.w}</span>`).join(' ');
+  $$('#edtext .w').forEach(w=>w.onclick=()=>{
+    const t=D.text[w.dataset.i];
+    if(w.classList.contains('fixed')) return;
+    if(w.dataset.err){ w.textContent=t.ok; w.classList.remove('hint','miss'); w.classList.add('fixed'); edFound++; $('#edCnt').textContent=edFound; $('#edBar').style.width=(edFound/12*100)+'%'; $('#rule').textContent='📏 Ереже: '+t.r;
+      if(edFound===12){ clearInterval(edT); confetti(); toast('Сен – нағыз редактор!'); } }
+    else { w.classList.add('miss'); edMissN++; $('#edMiss').textContent=edMissN; setTimeout(()=>w.classList.remove('miss'),700); }
+  });
+}
+function edStart(){ clearInterval(edT); let s=480; edT=setInterval(()=>{ s--; $('#edTimer').textContent=String(Math.floor(s/60)).padStart(2,'0')+':'+String(s%60).padStart(2,'0'); if(s<=0){clearInterval(edT); toast('Уақыт бітті!');} },1000); }
+function edHint(){ const w=$$('#edtext .w[data-err]:not(.fixed)'); if(!w.length) return; w.forEach(x=>x.classList.add('hint')); toast('Қатесі бар сөздер белгіленді'); }
+function edAll(){ $$('#edtext .w[data-err]:not(.fixed)').forEach(w=>w.click()); }
+
+/* jeopardy */
+let team=0, score=[0,0], cur=null, mTimer=null;
+function setTeam(t){ team=t; $$('.team').forEach(e=>e.classList.toggle('on',+e.dataset.t===t)); }
+function buildJeo(){
+  score=[0,0]; $('#sc0').textContent=0; $('#sc1').textContent=0;
+  let h=D.jeo.map(c=>`<div class="jh">${c.cat}</div>`).join('');
+  for(let r=0;r<4;r++) h+=D.jeo.map((c,ci)=>`<div class="jc" data-c="${ci}" data-r="${r}">${c.q[r].p}</div>`).join('');
+  $('#jeoGrid').innerHTML=h;
+  $$('.jc').forEach(e=>e.onclick=()=>{ cur=e; const q=D.jeo[e.dataset.c].q[e.dataset.r]; $('#mCat').textContent=D.jeo[e.dataset.c].cat+' · '+q.p; $('#mQ').textContent=q.q; $('#mA').textContent=q.a; $('#mA').style.display='none'; $('#modal').classList.add('on');
+    let s=30; $('#mT').textContent=s; clearInterval(mTimer); mTimer=setInterval(()=>{ s--; $('#mT').textContent=s>0?s:'Уақыт бітті!'; if(s<=0) clearInterval(mTimer); },1000); });
+}
+function showAns(){ $('#mA').style.display='block'; }
+function jeoRes(ok){ clearInterval(mTimer); const p=+cur.textContent; if(ok){ score[team]+=p; confetti(); } $('#sc'+team).textContent=score[team]; cur.classList.add('used'); $('#modal').classList.remove('on'); setTeam(1-team); }
+
+/* games tabs */
+$$('.gtabs button').forEach(b=>b.onclick=()=>{ $$('.gtabs button').forEach(x=>x.classList.toggle('ghost',x!==b)); $$('.game').forEach(g=>g.classList.toggle('on',g.id===b.dataset.g)); });
+
+/* g1 fast */
+let fT=null, fS=0, fRun=false;
+function fStart(){ fS=0; $('#fScore').textContent=0; let s=60; $('#fTime').textContent=s; fRun=true; clearInterval(fT); fT=setInterval(()=>{ s--; $('#fTime').textContent=s; if(s<=0){ clearInterval(fT); fRun=false; $('#fWord').textContent='Нәтиже: '+fS+' ұпай!'; $('#fOpts').innerHTML=''; confetti(); } },1000); fNext(); }
+function fNext(){ const p=D.pairs[Math.floor(Math.random()*D.pairs.length)]; $('#fWord').textContent=p[0];
+  const opts=shuf([p[1],...shuf(D.pairs.filter(x=>x!==p).map(x=>x[1])).slice(0,3)]);
+  $('#fOpts').innerHTML=opts.map(o=>`<button class="opt">${o}</button>`).join('');
+  $$('#fOpts .opt').forEach(b=>b.onclick=()=>{ if(!fRun) return; const ok=b.textContent===p[1]; b.classList.add(ok?'ok':'no'); if(ok){ fS++; $('#fScore').textContent=fS; } setTimeout(fNext, ok?250:600); }); }
+
+/* g2 tower */
+let qi=0, qOk=0;
+function qStart(){ qi=0; qOk=0; $('#ball').setAttribute('cy',275); $('#levels').innerHTML=Array.from({length:8},(_,i)=>`<rect x="44" y="${255-i*28}" width="32" height="3" fill="rgba(255,255,255,.35)"/>`).join(''); qShow(); }
+function qShow(){ if(qi>=D.quiz.length){ $('#qNum').textContent=''; $('#qText').textContent=`Нәтиже: ${qOk} / ${D.quiz.length}` + (qOk===8?' 🌟 Сен шыңға жеттің!':''); $('#qOpts').innerHTML=''; if(qOk>=6) confetti(); return; }
+  const q=D.quiz[qi]; $('#qNum').textContent=`Сұрақ ${qi+1} / ${D.quiz.length}`; $('#qText').textContent=q.q;
+  $('#qOpts').innerHTML=q.o.map((o,i)=>`<button class="opt" data-i="${i}">${o}</button>`).join('');
+  $$('#qOpts .opt').forEach(b=>b.onclick=()=>{ $$('#qOpts .opt').forEach(x=>x.onclick=null); const ok=+b.dataset.i===q.a; b.classList.add(ok?'ok':'no'); if(!ok) $$('#qOpts .opt')[q.a].classList.add('ok'); else { qOk++; $('#ball').setAttribute('cy',275-qOk*28); } qi++; setTimeout(qShow,1100); }); }
+
+/* g3 wheel */
+let rot=0;
+(function(){ const n=D.wheel.length, cols=['#f5c542','#1f6fe0','#ffffff','#0b3c8c']; let s='';
+  for(let i=0;i<n;i++){ const a0=(i/n)*2*Math.PI-Math.PI/2, a1=((i+1)/n)*2*Math.PI-Math.PI/2, r=140;
+    s+=`<path d="M0 0 L${r*Math.cos(a0)} ${r*Math.sin(a0)} A${r} ${r} 0 0 1 ${r*Math.cos(a1)} ${r*Math.sin(a1)}Z" fill="${cols[i%4]}" stroke="#0a2a66" stroke-width="2"/>`;
+    const am=(a0+a1)/2; s+=`<text x="${90*Math.cos(am)}" y="${90*Math.sin(am)}" fill="${i%4==1||i%4==3?'#fff':'#0a2a66'}" font-size="26" font-weight="800" font-family="Montserrat" text-anchor="middle" dominant-baseline="middle">${i+1}</text>`; }
+  s+='<circle r="20" fill="#0a2a66" stroke="#f5c542" stroke-width="4"/>'; $('#wheel').innerHTML=s; })();
+function spin(){ const n=D.wheel.length, k=Math.floor(Math.random()*n); rot += 360*5 + (360 - (rot%360)) - (k+0.5)*(360/n); $('#wheel').style.transform=`rotate(${rot}deg)`; $('#wq').textContent='...'; setTimeout(()=>{ $('#wq').innerHTML=`<b>№${k+1}.</b> ${D.wheel[k]}`; },4100); }
+
+/* g4 anagram */
+let ai=0, picked=[];
+function aShow(){ const [w,h]=D.anag[ai]; picked=[]; $('#aHint').textContent=h; $('#aNum').textContent=`${ai+1} / ${D.anag.length}`;
+  let l=shuf([...w]); if(l.join('')===w) l=l.reverse();
+  $('#aLet').innerHTML=l.map((c,i)=>`<span data-i="${i}">${c}</span>`).join(''); aDraw();
+  $$('#aLet span').forEach(s=>s.onclick=()=>{ s.classList.add('used'); picked.push(s); aDraw(); if(picked.length===w.length){ if(picked.map(x=>x.textContent).join('')===w){ toast('Дұрыс! '+w); confetti(); } else { toast('Қате, қайта көр'); setTimeout(aReset,600); } } }); }
+function aDraw(){ const w=D.anag[ai][0]; $('#aAns').innerHTML=[...w].map((_,i)=>`<span>${picked[i]?picked[i].textContent:''}</span>`).join(''); }
+function aReset(){ picked.forEach(s=>s.classList.remove('used')); picked=[]; aDraw(); }
+function aNext(){ ai=(ai+1)%D.anag.length; aShow(); }
+
+/* reflection */
+const votes=[0,0,0];
+function vote(i,el){ votes[i]++; $('#v'+i).textContent=votes[i]; $$('.rf').forEach(x=>x.classList.remove('on')); el.classList.add('on'); toast('Рахмет! Жауабың қабылданды'); }
+
+buildMatch(); buildBins(); buildEd(); buildJeo(); qStart(); aShow();
+</script>
+</body>
+</html>
